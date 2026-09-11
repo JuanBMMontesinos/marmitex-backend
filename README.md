@@ -4,6 +4,9 @@ Backend RESTful de alta performance desenvolvido em **Node.js**, **TypeScript** 
 
 A aplicação se conecta diretamente ao banco de dados PostgreSQL hospedado no **Supabase** via Service Role, sem necessidade de migrations locais adicionais.
 
+> 📚 **Documentação Técnica Completa:**
+> Consulte o [Índice da Documentação Técnica (docs/)](./docs/index.md) para a especificação exaustiva de arquitetura, dicionário de dados, variáveis de ambiente, módulos e o [Contexto Consolidado para IAs e Android Studio](./docs/ai-context.md).
+
 ---
 
 ## 🚀 1. Stack Tecnológica
