@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsup src --out-dir dist",
+    "build": "tsup src --out-dir dist && tsup src/serverless.ts --out-dir api --format cjs --no-splitting && node -e \"const fs=require('fs'); if(fs.existsSync('api/serverless.js')){fs.copyFileSync('api/serverless.js','api/index.js');fs.unlinkSync('api/serverless.js');}\"",
     "start": "node dist/server.js",
     "typecheck": "tsc --noEmit"
   },

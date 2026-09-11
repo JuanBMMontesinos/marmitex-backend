@@ -54,8 +54,8 @@ export function buildApp() {
       },
       servers: [
         {
-          url: `http://localhost:${env.PORT}`,
-          description: 'Ambiente Local de Desenvolvimento',
+          url: '/',
+          description: 'Servidor Atual (Auto-detect)',
         },
       ],
       tags: [
