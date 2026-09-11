@@ -19,9 +19,9 @@ const envSchema = z.object({
 const _env = envSchema.safeParse(process.env);
 
 if (!_env.success) {
-  console.error('❌ Configuração inválida de variáveis de ambiente:');
-  console.error(_env.error.format());
-  process.exit(1);
+  const formatted = JSON.stringify(_env.error.format(), null, 2);
+  console.error('❌ Configuração inválida de variáveis de ambiente:\n', formatted);
+  throw new Error(`Configuração inválida de variáveis de ambiente: ${formatted}`);
 }
 
 export const env = _env.data;
