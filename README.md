@@ -316,3 +316,27 @@ A API conta com um middleware centralizado de erros em `src/shared/errors/error-
 - Recursos não encontrados disparam `404` (`NotFoundError`).
 - Tentativas de entrega em bairros não cadastrados disparam `400` (`BadRequestError`).
 - Erros inesperados retornam `500` formatados sem vazar stack trace em ambiente de produção.
+
+---
+
+## 📱 7. Integração com o Aplicativo Android & Backoffice Web
+
+### URLs Oficiais de Produção (Vercel):
+- **Base URL da API:** `https://marmitex-backend.vercel.app/api/v1/`
+- **Swagger / OpenAPI 3.0:** `https://marmitex-backend.vercel.app/docs`
+- **Health Check:** `https://marmitex-backend.vercel.app/health`
+
+### Configuração no Android Studio (Kotlin / Retrofit):
+Altere a `BASE_URL` no seu cliente de rede:
+```kotlin
+object NetworkConfig {
+    const val BASE_URL = "https://marmitex-backend.vercel.app/api/v1/"
+}
+```
+
+### Configuração no Painel Web (Backoffice):
+No arquivo `.env` do seu frontend web (React / Vite):
+```env
+VITE_API_URL=https://marmitex-backend.vercel.app/api/v1
+```
+
